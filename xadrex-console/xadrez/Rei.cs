@@ -1,11 +1,14 @@
 ﻿using tabuleiro;
+using xadrez;
 
 namespace xadrex
 {
     class Rei : Peca
     {
+        private PartidaDeXadrez partida;
         public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
         {
+           
 
         }
 
@@ -16,7 +19,7 @@ namespace xadrex
         private bool podeMover(Posicao pos) 
         {
             Peca p = tab.peca(pos);
-            return p == null || p.cor != this.cor;
+            return p == null || p.cor != cor;
         }
 
         public override bool[,] movimentosPossiveis()
